@@ -1,0 +1,67 @@
+# Day 2: Python Basics – Variables, Data Types, Lists, Dictionaries
+
+# 1️⃣ Variables
+name = "Shanti"
+total_servers = 5
+cpu_usage = 75.5
+is_running = True
+
+print("Hello", name)
+print("Total servers:", total_servers)
+print("CPU Usage:", cpu_usage, "%")
+print("Server running?", is_running)
+print("-" * 40)
+
+# 2️⃣ List of AWS services
+aws_services = ["EC2", "S3", "RDS", "Lambda", "CloudWatch"]
+print("AWS Services List:")
+for service in aws_services:
+    print("-", service)
+print("-" * 40)
+
+# 3️⃣ Dictionary for one instance
+instance = {
+    "id": "i-12345",
+    "type": "t2.micro",
+    "status": "running"
+}
+
+print("Instance Details:")
+print("ID:", instance["id"])
+print("Type:", instance["type"])
+print("Status:", instance["status"])
+
+# Add a new key
+instance["region"] = "us-east-1"
+print("Region:", instance["region"])
+print("-" * 40)
+
+# Loop through dictionary
+print("Looping through instance dictionary:")
+for key, value in instance.items():
+    print(f"{key}: {value}")
+print("-" * 40)
+
+# 4️⃣ List of multiple instances (dictionaries)
+instances = [
+    {"id": "i-101", "type": "t2.micro", "status": "running"},
+    {"id": "i-102", "type": "t2.small", "status": "stopped"},
+    {"id": "i-103", "type": "t2.medium", "status": "running"}
+]
+
+print("All Instances:")
+for inst in instances:
+    print(f"ID: {inst['id']}, Type: {inst['type']}, Status: {inst['status']}")
+
+print("-" * 40)
+
+# 5️⃣ Print only running instances
+print("Running Instances:")
+for inst in instances:
+    if inst["status"] == "running":
+        print(f"ID: {inst['id']}, Type: {inst['type']}")
+
+print("-" * 40)
+
+# 6️⃣ String formatting (f-strings)
+print(f"Hello {name}, you have {total_servers} servers, CPU usage is {cpu_usage}%, and server running status is {is_running}.")
