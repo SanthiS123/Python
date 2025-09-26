@@ -133,6 +133,3 @@ print(f"Hello {name}, you have {total_servers} servers, CPU usage is {cpu_usage}
 
 ---
 
-Shanti, if you want, I can **draw a small diagram showing how the lists, dictionaries, and loops work together** — it makes understanding these structures much easier.
-
-Do you want me to do that?
