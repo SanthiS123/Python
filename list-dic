@@ -1,0 +1,39 @@
+# Mini-Project: EC2 Instance Manager (Simulation)
+
+# A list of EC2 instances (each instance is a dictionary)
+instances = [
+    {"id": "i-101", "type": "t2.micro", "status": "running", "region": "us-east-1"},
+    {"id": "i-102", "type": "t2.small", "status": "stopped", "region": "us-east-1"},
+    {"id": "i-103", "type": "t2.medium", "status": "running", "region": "us-west-2"},
+    {"id": "i-104", "type": "t2.large", "status": "terminated", "region": "us-west-2"}
+]
+
+# 1. Print all instances
+print("🔹 All EC2 Instances:")
+for inst in instances:
+    print(f"ID: {inst['id']}, Type: {inst['type']}, Status: {inst['status']}, Region: {inst['region']}")
+print("-" * 50)
+
+# 2. Print only running instances
+print("✅ Running Instances:")
+for inst in instances:
+    if inst["status"] == "running":
+        print(f"ID: {inst['id']} ({inst['type']}) in {inst['region']}")
+print("-" * 50)
+
+# 3. Count instances by status
+status_count = {"running": 0, "stopped": 0, "terminated": 0}
+
+for inst in instances:
+    status_count[inst["status"]] += 1
+
+print("📊 Instance Status Summary:")
+for status, count in status_count.items():
+    print(f"{status.capitalize()}: {count}")
+print("-" * 50)
+
+# 4. Find instances in us-east-1 region
+print("🌍 Instances in us-east-1:")
+for inst in instances:
+    if inst["region"] == "us-east-1":
+        print(f"{inst['id']} ({inst['status']})")
